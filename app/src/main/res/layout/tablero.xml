@@ -8,15 +8,6 @@
     android:background="#3699B5"
     android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tres en Raya"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="32dp" >
-
-    </TextView>
 
     <GridLayout
         android:id="@+id/tablero"
@@ -24,8 +15,8 @@
         android:layout_height="wrap_content"
         android:columnCount="3"
         android:rowCount="3"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="168dp">
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="186dp">
 
         <Button
             android:id="@+id/btn_00"
@@ -33,9 +24,7 @@
             android:layout_height="90dp"
             android:layout_margin="6dp"
             android:backgroundTint="#313244"
-            android:textColor="F38BA8"
-            android:textSize="32sp"
-            android:textStyle="bold" />
+            android:textColor="F38BA8" />
 
         <Button
             android:id="@+id/btn_01"
@@ -116,6 +105,8 @@
             android:textColor="F38BA8"
             android:textSize="32sp"
             android:textStyle="bold" />
+
+
 
     </GridLayout>
 

@@ -1,28 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3699B5">
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="--Tres en Raya--"
+        android:textColor="#FFFF"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="50dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="¡Elige el modo de juego para empezar!"
+        android:textColor="#FFFF"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="148dp" />
+
+
+    <ImageView
+        android:layout_width="279dp"
+        android:layout_height="176dp"
+        android:src="@drawable/tres_en_raya"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="486dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="24dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="220dp">
+        
+
 
         <Button
+            android:id="@+id/modo1vs1"
             android:layout_width="246dp"
             android:layout_height="68dp"
+            android:layout_margin="15dp"
+            android:backgroundTint="#313244"
             android:text="1 vs 1"
-            android:textSize="25dp"
-            android:backgroundTint="#313244"/>
+            android:textSize="25dp" />
 
         <Button
+            android:id="@+id/modo1vsMaquina"
             android:layout_width="246dp"
             android:layout_height="68dp"
+            android:layout_margin="15dp"
+            android:backgroundTint="#313244"
             android:text="1 vs 🤖"
-            android:textSize="25dp"
-            android:backgroundTint="#313244"/>
+            android:textSize="25dp" />
 
     </LinearLayout>
 
