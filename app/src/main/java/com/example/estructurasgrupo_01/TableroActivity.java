@@ -5,6 +5,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import Game.Table;
 
 
 public class TableroActivity extends AppCompatActivity {
@@ -18,10 +19,15 @@ public class TableroActivity extends AppCompatActivity {
     private Button btn20;
     private Button btn21;
     private Button btn22;
+    private Table table;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tablero);
+
+        // Instancia del tablero con el que se va a jugar
+        table = new Table();
+
 
         btn00 = findViewById(R.id.btn_00);
         btn01 = findViewById(R.id.btn_01);
