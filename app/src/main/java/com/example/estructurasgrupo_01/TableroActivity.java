@@ -387,6 +387,9 @@ public class TableroActivity extends AppCompatActivity {
 
         }else if("1vs1".equals(modo)){
 
+            FrameLayout panelConfiguracion = findViewById(R.id.panelConfiguracion);
+            panelConfiguracion.setVisibility(View.GONE);
+
             // Obtener botones
             btn00 = findViewById(R.id.btn_00);
             btn01 = findViewById(R.id.btn_01);
