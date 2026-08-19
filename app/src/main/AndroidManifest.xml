@@ -11,6 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EstructurasGrupo_01">
+
+        <activity
+            android:name=".TableroActivity"
+            android:exported="false" />
+
         <activity
             android:name=".MenuActivity"
             android:exported="true">

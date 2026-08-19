@@ -3,18 +3,14 @@ package TDA;
 import java.util.Comparator;
 import java.util.LinkedList;
 
-/**
- *
- * @author User
- */
+import Game.Table;
+
 public class NodeTree<E> {
     private E content;
     private LinkedList<Tree<E>> children;
-    private Comparator<E> cmp;
 
-    public NodeTree(E content, Comparator<E> cmp){
+    public NodeTree(E content){
         this.content = content;
-        this.cmp = cmp;
         children = new LinkedList<>();
     }
 
@@ -30,8 +26,9 @@ public class NodeTree<E> {
         return children;
     }
 
-    public void addChild(E content){
-        children.add(new Tree<>(content, cmp));
+    public void addChild(Table content){
+        children.add(new Tree<>(content));
     }
 
 }
+

@@ -68,8 +68,9 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_width="279dp"
-        android:layout_height="176dp"
+        android:layout_width="230dp"
+        android:layout_height="130dp"
+        android:translationY="-50dp"
         android:src="@drawable/tres_en_raya"
         android:contentDescription="Tres en raya"
         android:layout_marginTop="30dp"

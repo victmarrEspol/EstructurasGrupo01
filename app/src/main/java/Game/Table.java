@@ -3,9 +3,33 @@ package Game;
 public class Table {
 
     private char[][] elements;
+    private String tipoVictoria;
 
     public Table(){
         this.elements =  new char[3][3];
+    }
+
+    public Table(Table otra){
+        //Este es un constructor que introduje para que me cree de una vez la tabla y sirva como base para crear las tablas sucesivamente
+        this.elements = new char[3][3];
+        char[][] matrizOriginal = otra.getElements();
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                this.elements[i][j] = matrizOriginal[i][j];
+            }
+        }
+
+        tipoVictoria = "";
+
+    }
+
+    public char[][] getElements(){
+        return elements;
+    }
+
+    public String getTipoVictoria(){
+        return tipoVictoria;
     }
 
     public boolean insert(int posX, int posY, char tipoJugador){
@@ -36,14 +60,24 @@ public class Table {
         for(int i=0; i<3; i++){
             if(elements[i][0]==symbol &&
                     elements[i][1]==symbol &&
-                    elements[i][2]==symbol) return true;
+                    elements[i][2]==symbol){
+                if(i==0) tipoVictoria = "f0";
+                if(i==1) tipoVictoria = "f1";
+                if(i==2) tipoVictoria = "f2";
+                return true;
+            }
         }
 
         // Verificación de columnas
         for(int j=0; j<3; j++){
             if(elements[0][j]==symbol &&
                     elements[1][j]==symbol &&
-                    elements[2][j]==symbol) return true;
+                    elements[2][j]==symbol){
+                if(j==0) tipoVictoria = "c0";
+                if(j==1) tipoVictoria = "c1";
+                if(j==2) tipoVictoria = "c2";
+                return true;
+            }
         }
 
         // Diagonales
@@ -51,12 +85,18 @@ public class Table {
         // Principal
         if(elements[0][0]==symbol &&
                 elements[1][1]==symbol &&
-                elements[2][2]==symbol) return true;
+                elements[2][2]==symbol){
+            tipoVictoria = "d1";
+            return true;
+        }
 
         // Alterna
         if(elements[0][2]==symbol &&
                 elements[1][1]==symbol &&
-                elements[2][0]==symbol) return true;
+                elements[2][0]==symbol){
+            tipoVictoria = "d0";
+            return true;
+        }
 
         // Caso contrario
         return false;
@@ -64,10 +104,30 @@ public class Table {
     }
 
 
+
     // El empate se da cuando está lleno y ninguno gana, así que ese debe ser el retorno
     public boolean isDraw(){
         return isFull() && !isWinner('x') && !isWinner('o');
     }
+
+    public static int[] obtenerPosicionJugada(Table anterior, Table nuevo, char simboloMaquina){
+
+        char[][] original = anterior.getElements();
+        char[][] resultado = nuevo.getElements();
+
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                if(original[i][j] == '\u0000' && resultado[i][j] == simboloMaquina){
+                    return new int[]{i, j};
+                }
+            }
+        }
+
+        return null;
+    }
+
+
+
 
 
 

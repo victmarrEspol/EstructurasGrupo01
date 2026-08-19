@@ -8,17 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.activity.EdgeToEdge;
 
 public class MenuActivity extends AppCompatActivity {
-    /*
-    private final Button[][] botones = new Button[3][3];
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j<3; j++){
-            String idBoton = "btn" + i + j;
-            int resID = getResources().getIdentifier(idBoton, "id", getPackageName());
-            botones[i][j] = findViewById(R.id.tablero);
-
-        }
-    }
-    */
 
     private Button modo1vs1;
     private Button modo1vsMaquina;
@@ -44,6 +33,7 @@ public class MenuActivity extends AppCompatActivity {
             intent.putExtra("modo", "1vsMaquina"); // Enviar información de qué modalidad se ha elegido
             startActivity(intent);
         });
+
 
     }
 }
